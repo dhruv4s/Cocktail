@@ -5,6 +5,10 @@ import { CocktailSearchComponent } from './cocktail-search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CocktailSearchService } from './cocktail-search.service'
 import { CarouselModule} from 'primeng/carousel';
+import { DialogModule } from 'primeng/dialog';
+import { ProgressSpinnerModule} from 'primeng/progressspinner';
+import { CocktailHomeService } from '../cocktail-home/cocktail-home.service'
+import { CocktailHomeComponent } from '../cocktail-home/cocktail-home.component';
 
 describe('CocktailSearchComponent', () => {
   let component: CocktailSearchComponent;
@@ -12,9 +16,9 @@ describe('CocktailSearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CocktailSearchComponent ],
-      imports:[HttpClientModule,RouterTestingModule,HttpClientTestingModule,CarouselModule],
-      providers: [CocktailSearchService]
+      declarations: [ CocktailSearchComponent,CocktailHomeComponent ],
+      imports:[HttpClientModule,RouterTestingModule,HttpClientTestingModule,CarouselModule,DialogModule,ProgressSpinnerModule],
+      providers: [CocktailSearchService,CocktailHomeService]
     })
     .compileComponents();
   });
