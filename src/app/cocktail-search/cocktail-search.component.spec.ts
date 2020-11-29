@@ -21,8 +21,8 @@ describe('CocktailSearchComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ CocktailSearchComponent,CocktailHomeComponent ],
-      imports:[HttpClientModule,RouterTestingModule,HttpClientTestingModule,CarouselModule,DialogModule,ProgressSpinnerModule,ToastModule,MessageService,DropdownModule,FormsModule],
-      providers: [CocktailSearchService,CocktailHomeService]
+      imports:[HttpClientModule,RouterTestingModule,HttpClientTestingModule,CarouselModule,DialogModule,ProgressSpinnerModule,ToastModule,DropdownModule,FormsModule],
+      providers: [CocktailSearchService,CocktailHomeService,MessageService]
     })
     .compileComponents();
   });
