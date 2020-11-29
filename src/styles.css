@@ -1,1 +1,129 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.homeImg {
+  overflow: hidden;
+  height: 100vh;
+  background-image: url(assets/images/cocktail5.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.imgWrap {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.menuBtn .p-button {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #787878;
+}
+
+.menuBtn .p-button:enabled:active,
+.menuBtn .p-button:enabled:hover {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.menuBtn .p-button:focus {
+  box-shadow: none;
+}
+
+.logoImg {
+  position: absolute;
+  top: 38%;
+  width: 30%;
+  left: 65%;
+  z-index: 2;
+}
+
+.marTop15 {
+  margin-top: 15px;
+}
+
+.sideNavItem {
+  display: flex;
+  align-items: center;
+}
+
+.marLeft6 {
+  margin-left: 6px;
+}
+
+.navIcon {
+  color: #6c757d;
+}
+
+.category {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.progress-spinner {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.product-item-content {
+  border: 1px solid grey;
+  border-radius: 3px;
+  margin: 0.3rem;
+  text-align: center;
+  padding: 2rem 0;
+  color: white;
+}
+
+.carousalDiv {
+  margin-top: 10vh;
+  color: white;
+}
+
+.product-image {
+  width: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+}
+
+.p-carousel .p-carousel-indicators{
+  display: none;
+}
+
+.dialogClass{
+  width: 50vw;
+  height: 30vw;
+}
+
+.navIcons{
+  z-index:3;
+  color: #787878;
+  margin-top: 1vh;
+  cursor: pointer;
+}
+
+.icon1:hover, .icon2:hover{
+  color: white;
+}
+
+.p-component{
+  font-family: 'Times New Roman', Times, serif !important;
+}

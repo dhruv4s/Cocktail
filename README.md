@@ -1,27 +1,31 @@
 # Cocktail
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+A cocktail detail SPA using Angular.
 
-## Development server
+## Approach
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This SPA is created with a desktop first design approach.  
 
-## Code scaffolding
+Primeng has been used for designing various components of the application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Stack Details
 
-## Build
+Angular - 11.0.2
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Node.js - 15.2.1
 
-## Running unit tests
+HTML5,CSS3, Typescript
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+![angularCli](https://user-images.githubusercontent.com/74617117/99897168-44399e80-2cbd-11eb-8517-010594e3b66d.PNG)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Setup Instructions
 
-## Further help
+1. Clone the github project.
+2. Check that proper Angular and Node versions are installed.
+3. Inside the project folder run 'npm i' command to install all the node modules related to the project.
+4. For dev build, from terminal run command 'ng serve' and after the build is over hit 'https://localhost:4200'.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Deployed Instance URL
+
+https://spacexprojects.herokuapp.com/

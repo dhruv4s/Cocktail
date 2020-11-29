@@ -1,0 +1,100 @@
+<div style="background-color: black; height: 100vh">
+  <div *ngIf="!home">
+    <div class="progress-spinner" *ngIf="showSpinner">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+    <div style="text-align: center">
+      <img
+        src="assets/images/cocktail3.png"
+        width="25%"
+        style="margin-top: 6vh; cursor: pointer;"
+        alt="logo image"
+        (click)="backToHome()"
+      />
+    </div>
+    <div style="position: absolute; top: 0;right:25px">
+      <app-cocktail-home></app-cocktail-home>
+    </div>
+    <div *ngIf="results" class="carousalDiv">
+      <p-carousel
+        [value]="results"
+        styleClass="custom-carousel"
+        [numVisible]="3"
+        [numScroll]="1"
+        [circular]="false"
+        [autoplayInterval]="3000"
+      >
+        <ng-template pTemplate="header">
+          <h1 style="margin-left: 55px; margin-bottom: 3vh; color:#8e7560;font-size: 38px;">Here is a selection of your drinks ...</h1>
+        </ng-template>
+        <ng-template let-product pTemplate="item">
+          <div class="product-item">
+            <div class="product-item-content">
+              <div class="p-mb-3">
+                <img
+                  class="product-image"
+                  [src]="product.strDrinkThumb"
+                  alt="carousal image"
+                  style="cursor: pointer"
+                  (click)="getCocktailDetail(product.idDrink)"
+                />
+              </div>
+              <div style="margin-top: 1vh;">
+                <h2 class="p-mb-1">{{ product.strDrink }}</h2>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+    <p-dialog
+      header="Details"
+      [(visible)]="displayDetails"
+      [baseZIndex]="10000"
+      styleClass="dialogClass"
+    >
+      <div class="p-mb-3" *ngIf="cocktail" style="text-align: center">
+        <img
+          class="product-image"
+          src="{{ cocktail.strDrinkThumb }}"
+          alt="carousal image"
+        />
+      </div>
+      <div *ngIf="cocktail">
+        <h2>{{ cocktail.strDrink }}</h2>
+        <div style="display: flex;">
+          <h4>Category:</h4>
+          <span style="margin-left: 1vh;">{{ cocktail.strCategory }}</span>
+        </div>
+        <div style="display: flex;">
+          <h4>Alcohol Category:</h4>
+          <span style="margin-left: 1vh;">{{ cocktail.strAlcoholic }}</span>
+        </div>
+        <div style="display: flex;">
+          <h4>Glass Type:</h4>
+          <span style="margin-left: 1vh;">{{ cocktail.strGlass }}</span>
+        </div>
+        <h4>Instructions:</h4>
+        <p>{{ cocktail.strInstructions }}</p>
+      </div>
+    </p-dialog>
+    <div style="margin-right: 55px;text-align: end;color: #787878;" *ngIf="results">*For more information click on the image</div>
+  </div>
+
+  <div *ngIf="home">
+    <div class="homeImg">
+      <div class="imgWrap"></div>
+
+      <!-- Name Image -->
+      <div style="display: flex">
+        <img
+          src="assets/images/cocktail3.png"
+          alt="cocktail Image"
+          class="logoImg"
+        />
+      </div>
+      <div style="position: absolute; top: 0;right:25px">
+        <app-cocktail-home></app-cocktail-home>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+<!-- Sidebar button -->
+<div style="display: flex;font-size: 18px;">
+  <div style="display: flex" class="menuItem1">
+    <div (click)="showHide('about')" class="navIcons icon1"><i class="pi pi-info-circle" style="margin-right: 3px;"></i>About</div>
+  </div>
+  <div style="display: flex; margin-left: 1vh" class="menuItem2">
+    <div (click)="showHide('search')" class="navIcons icon2"><i class="pi pi-search" style="margin-right: 3px;"></i>Find Your Cocktail</div>
+  </div>
+</div>
+
+
+<!-- About dialog -->
+<p-dialog
+  header="THE COCKTAIL SHOP"
+  [(visible)]="displayAbout"
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</p-dialog>
+
+<!-- Search Dialog -->
+<p-dialog
+  header="Search by Name"
+  [(visible)]="displaySearch"
+  [style]="{ width: '30vw' }"
+  [baseZIndex]="10000"
+>
+  <span class="p-float-label">
+    <input
+      id="float-input"
+      type="text"
+      size="100"
+      pInputText
+      style="width: 100%"
+      [(ngModel)]="inputName"
+    />
+    <label for="float-input">Enter Cocktail Name</label>
+  </span>
+  <span style="margin-top: 1vh; color: blue; font-size: 12px; cursor: pointer" (click)="showHide('filter')">
+    Advanced Search
+  </span>
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-search"
+      (click)="searchCocktail('search')"
+      label="Search"
+      class="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>
+
+<!-- Filter Dialog -->
+<p-dialog
+  header="Filter By Category"
+  [(visible)]="displayFilter"
+  [style]="{ width: '30vw' }"
+  [baseZIndex]="100"
+  [contentStyle]="{ overflow: 'visible' }"
+>
+  <div class="category">
+    <p-dropdown
+      [options]="categoryList"
+      (onChange)="filterCocktail($event)"
+      [(ngModel)]="selectedCategory"
+      placeholder="Select a Cocktail Category"
+      optionLabel="name"
+      [showClear]="true"
+    ></p-dropdown>
+    <p-dropdown
+      [options]="cocktailList"
+      *ngIf="showCategoryList"
+      [(ngModel)]="selectedCocktail"
+      placeholder="Select a Cocktail Type"
+      optionLabel="name"
+      [showClear]="true"
+    ></p-dropdown>
+  </div>
+  <span style="margin-top: 1vh; color: blue; font-size: 12px; cursor: pointer" (click)="showHide('search')">
+    Search By Name
+  </span>
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-search"
+      (click)="searchCocktail('filter')"
+      label="Search"
+      class="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>
+<div class="progress-spinner" *ngIf="showSpinner">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<p-toast position="bottom-center" key="bc"></p-toast>
