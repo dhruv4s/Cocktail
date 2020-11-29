@@ -9,6 +9,10 @@ import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule} from 'primeng/progressspinner';
 import { CocktailHomeService } from '../cocktail-home/cocktail-home.service'
 import { CocktailHomeComponent } from '../cocktail-home/cocktail-home.component';
+import { ToastModule} from 'primeng/toast';
+import { MessageService} from 'primeng/api';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule} from '@angular/forms';
 
 describe('CocktailSearchComponent', () => {
   let component: CocktailSearchComponent;
@@ -17,7 +21,7 @@ describe('CocktailSearchComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ CocktailSearchComponent,CocktailHomeComponent ],
-      imports:[HttpClientModule,RouterTestingModule,HttpClientTestingModule,CarouselModule,DialogModule,ProgressSpinnerModule],
+      imports:[HttpClientModule,RouterTestingModule,HttpClientTestingModule,CarouselModule,DialogModule,ProgressSpinnerModule,ToastModule,MessageService,DropdownModule,FormsModule],
       providers: [CocktailSearchService,CocktailHomeService]
     })
     .compileComponents();
@@ -35,23 +39,21 @@ describe('CocktailSearchComponent', () => {
 
   it('should initialise variables', () => {
     expect(component.displayDetails).toBeFalse();
-    expect(component.showSpinner).toBeFalse();
+    expect(component.showSpinner).toBeTrue();
   });
 
   it('search cocktail', () => {
     component.searchCocktail('margarita')
-    expect(component.showSpinner).toBeFalse();
-    expect(component.home).toBeFalse();
+    expect(component.showSpinner).toBeTrue();
   });
 
   it('filter cocktail', () => {
     component.filterCocktail('c','cocktail')
-    expect(component.showSpinner).toBeFalse();
-    expect(component.home).toBeFalse();
+    expect(component.showSpinner).toBeTrue();
   });
 
   it('get cocktail', () => {
     component.getCocktailDetail('11007')
-    expect(component.displayDetails).toBeTrue();
+    expect(component.displayDetails).toBeFalse();
   });
 });
