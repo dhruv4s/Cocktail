@@ -26,3 +26,6 @@ HTML5,CSS3, Typescript
 3. Inside the project folder run 'npm i' command to install all the node modules related to the project.
 4. For dev build, from terminal run command 'ng serve' and after the build is over hit 'https://localhost:4200'.
 
+## Deployed URL
+https://appcocktail.netlify.app/
+
